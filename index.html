@@ -3,220 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CatGPT</title>
+    <title>CatGPT - Home</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Merged CSS (your existing and new styles) */
-        /* General body styles */
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f0f0f0;
-            color: #333;
-        }
-
-        /* Heading Styles */
-        h1 {
-            color: #ff6347;
-        }
-
-        /* Image Styles */
-        img {
-            max-width: 80%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Container */
-        .container {
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-            margin-top: 50px;
-        }
-
-        /* Top Navigation Bar */
-        .topnav {
-            background-color: #4CAF50; /* Green background */
-            overflow: hidden;
-        }
-
-        .topnav a {
-            float: left;
-            display: block;
-            color: white; /* White text */
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-            font-size: 17px;
-        }
-
-        .topnav a:hover {
-            background-color: #45a049; /* Darker green for hover effect */
-            color: white; /* Keep text white on hover */
-        }
-
-        .topnav a.active {
-            background-color: #3e8e41; /* A darker green for active page */
-            color: white; /* White text for active link */
-        }
-
-        /* Random section styling */
-        #random-section {
-            display: none; /* Hide the Random section by default */
-        }
-
-        /* Make Random section visible when active */
-        .active-section {
-            display: block;
-        }
-
-        /* Button styling */
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #4CAF50; /* Match the top bar green */
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #45a049; /* Darker green on hover */
-        }
-    </style>
 </head>
 <body>
 
-<!-- Top Navigation -->
+<!-- Top Navigation Bar -->
 <div class="topnav">
-    <a class="active" href="#home" onclick="showHomePage(event)">Home</a>
-    <a href="#random" onclick="showRandomPage(event)">Random</a>
-    <a href="#prompt" onclick="showPromptPage(event)">Prompt</a>
-    <a href="#about" onclick="showAboutPage(event)">About</a>
+    <a class="active" href="index.html">Home</a>
+    <a href="random.html">Random</a>
+    <a href="prompt.html">Prompt</a>
+    <a href="about.html">About</a>
 </div>
 
-<!-- Content Section -->
+<!-- Main Content Section -->
 <div class="container">
     <h1>CatGPT</h1>
     <p>A website that generates random cat images.</p>
-
-    <!-- Home Page Section (visible by default) -->
-    <div id="home-section" class="section active-section">
-        <p>Welcome to the CatGPT website. Click "Random" to see a random cat image!</p>
-    </div>
-
-    <!-- Random Section -->
-    <div id="random-section" class="section">
-        <img id="cat-image" src="https://cataas.com/cat" alt="Random Cat">
-        <br><br>
-        <button onclick="fetchCatImage()">Get New Cat</button>
-    </div>
-
-    <!-- Placeholder for other sections (e.g., Prompt, About) -->
-    <div id="prompt-section" class="section">
-        <p>Coming soon! (Prompt Section)</p>
-    </div>
-
-    <div id="about-section" class="section">
-        <p>Learn more about CatGPT. (About Section)</p>
-    </div>
+    <p>Click "Random" to go to the random cat page!</p>
 </div>
-
-<script>
-    // Function to fetch a new cat image
-    function fetchCatImage() {
-        const catImage = document.getElementById('cat-image');
-        catImage.src = 'https://cataas.com/cat?' + new Date().getTime(); // To avoid caching
-    }
-
-    // Function to show the Home page
-    function showHomePage(event) {
-        event.preventDefault(); // Prevent default anchor link behavior
-
-        // Hide all sections
-        const sections = document.querySelectorAll('.section');
-        sections.forEach(section => section.classList.remove('active-section'));
-
-        // Show the Home section
-        const homeSection = document.getElementById('home-section');
-        homeSection.classList.add('active-section');
-
-        // Update active link
-        updateActiveLink('home');
-    }
-
-    // Function to show the Random page
-    function showRandomPage(event) {
-        event.preventDefault(); // Prevent default anchor link behavior
-
-        // Hide all sections
-        const sections = document.querySelectorAll('.section');
-        sections.forEach(section => section.classList.remove('active-section'));
-
-        // Show the Random section
-        const randomSection = document.getElementById('random-section');
-        randomSection.classList.add('active-section');
-
-        // Update active link
-        updateActiveLink('random');
-    }
-
-    // Function to show the Prompt page (Placeholder)
-    function showPromptPage(event) {
-        event.preventDefault(); // Prevent default anchor link behavior
-
-        // Hide all sections
-        const sections = document.querySelectorAll('.section');
-        sections.forEach(section => section.classList.remove('active-section'));
-
-        // Show the Prompt section
-        const promptSection = document.getElementById('prompt-section');
-        promptSection.classList.add('active-section');
-
-        // Update active link
-        updateActiveLink('prompt');
-    }
-
-    // Function to show the About page (Placeholder)
-    function showAboutPage(event) {
-        event.preventDefault(); // Prevent default anchor link behavior
-
-        // Hide all sections
-        const sections = document.querySelectorAll('.section');
-        sections.forEach(section => section.classList.remove('active-section'));
-
-        // Show the About section
-        const aboutSection = document.getElementById('about-section');
-        aboutSection.classList.add('active-section');
-
-        // Update active link
-        updateActiveLink('about');
-    }
-
-    // Function to update the active navigation link
-    function updateActiveLink(page) {
-        const links = document.querySelectorAll('.topnav a');
-        links.forEach(link => {
-            link.classList.remove('active');
-        });
-
-        const activeLink = document.querySelector(`.topnav a[href="#${page}"]`);
-        if (activeLink) {
-            activeLink.classList.add('active');
-        }
-    }
-
-    // Initially, show the Home page
-    window.onload = function() {
-        showHomePage(event);
-    };
-</script>
 
 </body>
 </html>
