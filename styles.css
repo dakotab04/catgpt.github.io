@@ -8,7 +8,7 @@ body {
 
 /* Heading Styles */
 h1 {
-    color: #ff6347;
+    color: #000000; /* Changed to black */
 }
 
 /* Image Styles */
@@ -31,7 +31,7 @@ img {
 
 /* Top Navigation Bar */
 .topnav {
-    background-color: #4CAF50; /* Green background */
+    background-color: #006747; /* Dartmouth green background */
     overflow: hidden;
 }
 
@@ -47,12 +47,12 @@ img {
 
 /* Active link styling */
 .topnav a.active {
-    background-color: #3e8e41; /* A darker green for active page */
+    background-color: #004d39; /* A darker Dartmouth green for active page */
     color: white; /* White text for active link */
 }
 
 .topnav a:hover {
-    background-color: #45a049; /* Darker green for hover effect */
+    background-color: #007c5d; /* A slightly lighter Dartmouth green for hover effect */
     color: white; /* Keep text white on hover */
 }
 
@@ -60,7 +60,7 @@ img {
 button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #4CAF50; /* Match the top bar green */
+    background-color: #006747; /* Match the top bar Dartmouth green */
     color: white;
     border: none;
     cursor: pointer;
@@ -69,5 +69,5 @@ button {
 }
 
 button:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #007c5d; /* A lighter Dartmouth green on hover */
 }
