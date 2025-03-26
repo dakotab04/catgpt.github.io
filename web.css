@@ -32,7 +32,7 @@ img {
 /* Top Navigation Bar */
 .topnav {
     background-color: #4CAF50; /* Green background */
-    overflow: hidden; /* To make sure the links fit properly */
+    overflow: hidden;
 }
 
 .topnav a {
@@ -45,19 +45,24 @@ img {
     font-size: 17px;
 }
 
-.topnav a:hover {
-    background-color: #45a049; /* Darker green for hover effect */
-    color: white; /* Keep text white on hover */
-}
-
+/* Active link styling */
 .topnav a.active {
     background-color: #3e8e41; /* A darker green for active page */
     color: white; /* White text for active link */
 }
 
+.topnav a:hover {
+    background-color: #45a049; /* Darker green for hover effect */
+    color: white; /* Keep text white on hover */
+}
+
 /* Random section styling */
 #random-section {
     display: none; /* Hide the Random section by default */
+}
+
+#home-section {
+    display: block; /* Home section is visible by default */
 }
 
 /* Make Random section visible when active */
