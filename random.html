@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CatGPT - Random</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Top Navigation Bar -->
+<div class="topnav">
+    <a href="index.html">Home</a>
+    <a class="active" href="random.html">Random</a>
+    <a href="prompt.html">Prompt</a>
+    <a href="about.html">About</a>
+</div>
+
+<!-- Random Cat Section -->
+<div class="container">
+    <h1>Random Cat Generator</h1>
+    <p>Click the button below to see a random cat!</p>
+    <img id="cat-image" src="https://cataas.com/cat" alt="Random Cat">
+    <br><br>
+    <button onclick="fetchCatImage()">Get New Cat</button>
+</div>
+
+<script>
+    // Function to fetch a new cat image
+    function fetchCatImage() {
+        const catImage = document.getElementById('cat-image');
+        catImage.src = 'https://cataas.com/cat?' + new Date().getTime(); // To avoid caching
+    }
+</script>
+
+</body>
+</html>
