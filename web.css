@@ -1,13 +1,27 @@
+/* styles.css */
 body {
-  background-color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    color: #333;
 }
 
 h1 {
-  color: black;
-  text-align: center;
+    color: #ff6347;
 }
 
-p {
-  font-family: verdana;
-  font-size: 20px;
+img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin-top: 50px;
 }
