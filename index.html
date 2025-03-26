@@ -1,13 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>CatGPT</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CatGPT</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS file -->
 </head>
 <body>
 
-<h1>CatGPT</h1>
-<p>A website which generates cat images.</p>
-<img src="https://catfriendly.com/wp-content/uploads/2021/08/cat-lying-down.jpg" alt="">
+<div class="container">
+    <h1>CatGPT</h1>
+    <p>A website that generates random cat images.</p>
+    <img id="cat-image" src="https://cataas.com/cat" alt="Random Cat">
+    <br><br>
+    <button onclick="fetchCatImage()">Get New Cat</button>
+</div>
+
+<script>
+    // Function to fetch a new cat image
+    function fetchCatImage() {
+        const catImage = document.getElementById('cat-image');
+        catImage.src = 'https://cataas.com/cat?' + new Date().getTime(); // To avoid caching
+    }
+</script>
 
 </body>
 </html>
