@@ -5,15 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CatGPT</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS file -->
+    <style>
+        .section {
+            display: none;
+        }
+        .active-section {
+            display: block;
+        }
+    </style>
 </head>
 <body>
 
+<!-- Navigation -->
+<div class="topnav">
+    <a class="active" href="#home">Home</a>
+    <a href="#random" onclick="showRandomPage()">Random</a>
+    <a href="#prompt">Prompt</a>
+    <a href="#about">About</a>
+</div>
+
+<!-- Content -->
 <div class="container">
     <h1>CatGPT</h1>
     <p>A website that generates random cat images.</p>
-    <img id="cat-image" src="https://cataas.com/cat" alt="Random Cat">
-    <br><br>
-    <button onclick="fetchCatImage()">Get New Cat</button>
+    
+    <!-- Random Section -->
+    <div id="random-section" class="section">
+        <img id="cat-image" src="https://cataas.com/cat" alt="Random Cat">
+        <br><br>
+        <button onclick="fetchCatImage()">Get New Cat</button>
+    </div>
 </div>
 
 <script>
@@ -22,6 +43,22 @@
         const catImage = document.getElementById('cat-image');
         catImage.src = 'https://cataas.com/cat?' + new Date().getTime(); // To avoid caching
     }
+
+    // Function to show the Random section
+    function showRandomPage() {
+        // Hide all sections
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => section.classList.remove('active-section'));
+
+        // Show the Random section
+        const randomSection = document.getElementById('random-section');
+        randomSection.classList.add('active-section');
+    }
+
+    // Initially, hide the Random section when the page loads
+    window.onload = function() {
+        showRandomPage();  // Automatically show Random page when opened
+    };
 </script>
 
 </body>
